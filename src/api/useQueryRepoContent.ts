@@ -4,11 +4,12 @@ import {
   REPO_FOLDER_CONTENT,
   REPO_FILE_CONTENT,
 } from "./gqlQueries";
+import {DEFAULT_REPO} from '../constants'
 
 const useQueryRepoContent = (
-  user: string = "gedrimas",
-  repo: string = "oldCupBackend",
-  branch: string = "main"
+  user: string = DEFAULT_REPO.USER,
+  repo: string = DEFAULT_REPO.REPO,
+  branch: string = DEFAULT_REPO.BRANCH
 ) => {
   const fetchRepoContent = () => {
     return useQuery(REPO_CONTENT, {
