@@ -1,30 +1,19 @@
-# React + TypeScript + Vite
+# GitHub repository viewer (TS+REACT+GraphQL) 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The app has been deployed for your convenience on my local k3s server. You can check it out here: https://ivelum.server.gedrimas.eu1.kubegateway.com/
 
-Currently, two official plugins are available:
+To up and run the app locally first of all you need Docker to be installed on your machine. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pull the docker image from the public repository:
 
-## Expanding the ESLint configuration
+- for AMD CPU:
+  `docker pull gedrimas/example-application:github-viewer-amd.v1.0.0`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- for ARM CPU:
+  `docker pull gedrimas/example-application:github-viewer-arm.v1.0.0`
 
-- Configure the top-level `parserOptions` property like this:
+To run the container for example on Mac OS M1:
+  `docker run -d -p 3000:80  gedrimas/example-application:github-viewer-arm.v1.0.0`
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Open the link: http://localhost:3000/
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list

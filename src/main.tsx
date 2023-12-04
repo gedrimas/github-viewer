@@ -7,7 +7,6 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
-
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
@@ -15,7 +14,7 @@ const httpLink = createHttpLink({
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = `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`
+  const token = "github token";
   return {
     headers: {
       ...headers,
